@@ -1,0 +1,77 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Backend", "backend\Backend.csproj", "{7D3D7037-4B2B-49B8-A449-B035E891D8BA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{FC051A9C-F7ED-4D84-B006-99497161019D}"
+	ProjectSection(SolutionItems) = preProject
+		components\cache.yml = components\cache.yml
+		Components\middleware.yml = Components\middleware.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{D86BCFDE-019C-44CA-B61F-9DDC9501026C}"
+	ProjectSection(SolutionItems) = preProject
+		infrastructure\docker.yml = infrastructure\docker.yml
+		infrastructure\namespace.yml = infrastructure\namespace.yml
+		infrastructure\rabbitmq.yml = infrastructure\rabbitmq.yml
+		infrastructure\redis.yml = infrastructure\redis.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{A265F374-B5E4-438A-BD03-1618B392D2D9}"
+	ProjectSection(SolutionItems) = preProject
+		scripts\build.bat = scripts\build.bat
+		scripts\debug-backend.bat = scripts\debug-backend.bat
+		scripts\debug-frontend.bat = scripts\debug-frontend.bat
+		scripts\debug-infra.bat = scripts\debug-infra.bat
+		scripts\install.bat = scripts\install.bat
+		scripts\setup.bat = scripts\setup.bat
+		scripts\test.bat = scripts\test.bat
+		scripts\uninstall.bat = scripts\uninstall.bat
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api", "api", "{0C43DDB7-1C82-4171-BB63-45D5FA832249}"
+	ProjectSection(SolutionItems) = preProject
+		api\backend.yml = api\backend.yml
+		api\frontend.yml = api\frontend.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_", "_", "{28FC920E-9C80-4907-BA33-A6ABD47E646C}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frontend", "frontend\Frontend.csproj", "{57955965-38F9-431D-A67E-C4E24181111C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "debug", "debug", "{0F07D89C-054E-4084-B61F-D0AF36C2891F}"
+	ProjectSection(SolutionItems) = preProject
+		components\debug\cache.yml = components\debug\cache.yml
+		components\debug\middleware.yml = components\debug\middleware.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D3D7037-4B2B-49B8-A449-B035E891D8BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D3D7037-4B2B-49B8-A449-B035E891D8BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D3D7037-4B2B-49B8-A449-B035E891D8BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D3D7037-4B2B-49B8-A449-B035E891D8BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57955965-38F9-431D-A67E-C4E24181111C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57955965-38F9-431D-A67E-C4E24181111C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57955965-38F9-431D-A67E-C4E24181111C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57955965-38F9-431D-A67E-C4E24181111C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0F07D89C-054E-4084-B61F-D0AF36C2891F} = {FC051A9C-F7ED-4D84-B006-99497161019D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {06827479-5E31-47D1-856E-D71515BE76E4}
+	EndGlobalSection
+EndGlobal

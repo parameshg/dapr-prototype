@@ -1,0 +1,56 @@
+version: "3.6"
+services:
+  rabbitmq:
+    image: rabbitmq:3.8.5-management
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: any
+      resources:
+        limits:
+          memory: 512M
+        reservations:
+          memory: 256M
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    networks:
+      - dapr
+
+  mongodb:
+    image: mongo:4.2.7
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: any
+    ports:
+      - "27017:27017"
+    networks:
+      - dapr
+
+  #redis:
+  #   image: redis:6.0.5-alpine
+  #   deploy:
+  #     replicas: 1
+  #     restart_policy:
+  #       condition: any
+  #   ports:
+  #     - "6379:6379"
+  #   networks:
+  #     - dapr
+
+  #zipkin:
+  #   image: openzipkin/zipkin-slim:2
+  #   deploy:
+  #     replicas: 1
+  #     restart_policy:
+  #       condition: any
+  #   ports:
+  #     - "9411:9411"
+  #   networks:
+  #     - dapr
+
+networks:
+  dapr:
+    name: dapr
+    driver: bridge

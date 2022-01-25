@@ -1,0 +1,39 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  namespace: dapr
+  name: middleware
+spec:
+  type: pubsub.rabbitmq
+  version: v1
+  metadata:
+  - name: host
+    value: "amqp://guest:guest@rabbitmq:5672"
+  - name: durable
+    value: "true"
+  - name: deletedWhenUnused
+    value: "false"
+  - name: autoAck
+    value: "false"
+  - name: deliveryMode
+    value: "0"
+  - name: requeueInFailure
+    value: "false"
+  - name: prefetchCount
+    value: "0"
+  - name: reconnectWait
+    value: "0"
+  - name: concurrencyMode
+    value: parallel
+  - name: backOffPolicy
+    value: "exponential"
+  - name: backOffInitialInterval
+    value: "100"
+  - name: backOffMaxRetries
+    value: "16"
+  - name: enableDeadLetter
+    value: "true"
+  - name: maxLen
+    value: "3000"
+  - name: maxLenBytes
+    value: "10485760"

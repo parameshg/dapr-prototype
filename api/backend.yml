@@ -1,0 +1,45 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: dapr
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      namespace: dapr
+      labels:
+        app: backend
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "backend"
+        dapr.io/app-port: "80"
+    spec:
+      containers:
+        - name: api
+          image: parameshg/dapr-prototype-backend-api:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 6379
+          resources:
+            limits:
+              memory: "1Gi"
+              cpu: "0.5"
+          livenessProbe:
+            initialDelaySeconds: 10
+            failureThreshold: 2
+            timeoutSeconds: 10
+            periodSeconds: 10
+            tcpSocket:
+              port: 80
+          readinessProbe:
+            initialDelaySeconds: 2
+            failureThreshold: 2
+            timeoutSeconds: 2
+            periodSeconds: 2
+            tcpSocket:
+              port: 80
