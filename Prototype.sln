@@ -8,7 +8,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{FC051A9C-F7ED-4D84-B006-99497161019D}"
 	ProjectSection(SolutionItems) = preProject
 		components\cache.yml = components\cache.yml
+		components\configuration.yml = components\configuration.yml
 		Components\middleware.yml = Components\middleware.yml
+		components\secrets.yml = components\secrets.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{D86BCFDE-019C-44CA-B61F-9DDC9501026C}"
@@ -47,7 +49,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "debug", "debug", "{0F07D89C-054E-4084-B61F-D0AF36C2891F}"
 	ProjectSection(SolutionItems) = preProject
 		components\debug\cache.yml = components\debug\cache.yml
+		components\debug\configuration.yml = components\debug\configuration.yml
 		components\debug\middleware.yml = components\debug\middleware.yml
+		components\debug\secrets.yml = components\debug\secrets.yml
 	EndProjectSection
 EndProject
 Global
