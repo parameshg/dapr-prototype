@@ -11,6 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", 
 		components\configuration.yml = components\configuration.yml
 		Components\middleware.yml = Components\middleware.yml
 		components\secrets.yml = components\secrets.yml
+		components\throttler.yml = components\throttler.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{D86BCFDE-019C-44CA-B61F-9DDC9501026C}"
@@ -35,6 +36,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{A265
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api", "api", "{0C43DDB7-1C82-4171-BB63-45D5FA832249}"
 	ProjectSection(SolutionItems) = preProject
+		api\appconfig.yml = api\appconfig.yml
 		api\backend.yml = api\backend.yml
 		api\frontend.yml = api\frontend.yml
 	EndProjectSection

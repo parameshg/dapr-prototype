@@ -3,9 +3,20 @@ using System.Collections.Generic;
 
 namespace Backend.Models
 {
+    [Serializable]
     public class Dataset
     {
+        private static object guard = new object();
+
         public List<int> Items { get; set; } = new List<int>();
+
+        public int Count
+        {
+            get
+            {
+                return Items.Count;
+            }
+        }
 
         public int Sum
         {
@@ -74,9 +85,20 @@ namespace Backend.Models
             }
         }
 
+        public void Add(int value)
+        {
+            lock (guard)
+            {
+                Items.Add(value);
+            }
+        }
+
         public void Clear()
         {
-            Items.Clear();
+            lock (guard)
+            {
+                Items.Clear();
+            }
         }
     }
 }

@@ -37,4 +37,5 @@ The following lists shows the completion status of protoype with Dapr features i
 - https://dapr.io
 - https://github.com/dapr
 - https://aka.ms/dapr-discord (Discord)
-- https://us02web.zoom.us/j/85305980190 (Community Meeting, Password: eWRhSklVTjJjSnhTaURDcFZaU2ZzQT09)
+- https://us02web.zoom.us/j/85305980190 (Code: eWRhSklVTjJjSnhTaURDcFZaU2ZzQT09)
+- https://github.com/orgs/dapr/projects/52 (Roadmap)

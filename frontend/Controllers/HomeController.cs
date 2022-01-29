@@ -51,7 +51,7 @@ namespace Frontend.Controllers
             }
             else
             {
-                //TODO: This is obsolete and not stable
+                //TODO: This is obsolete and not stable. Use gRPC client to call.
 
                 var configuration = await Dapr.GetConfiguration(CONFIGURATION, new List<string>() { key });
 
@@ -65,7 +65,7 @@ namespace Frontend.Controllers
         }
 
         [HttpPost("/config/{key}")]
-        public async Task<bool> SetConfiguration(string key, [FromBody] string value, [FromQuery] bool secret)
+        public Task<bool> SetConfiguration(string key, [FromBody] string value, [FromQuery] bool secret)
         {
             var result = false;
 
@@ -85,20 +85,13 @@ namespace Frontend.Controllers
                 //}
             }
 
-            return result;
+            return Task.FromResult(result);
         }
 
         [HttpGet("/series")]
         public async Task<dynamic> GetSeries([FromQuery] int count = 10)
         {
             dynamic result = new { count = 0, sum = 0, mean = 0, variance = 0, deviation = 0 };
-
-            var configuration = await Dapr.GetConfiguration(CONFIGURATION, new List<string>() { "defaults.series.count" });
-
-            if (configuration != null && configuration.Items != null && configuration.Items.Count.Equals(1))
-            {
-                count = int.Parse(configuration.Items[0].Value);
-            }
 
             async Task Fibonacci(int firstNumber, int secondNumber, int counter, int length)
             {

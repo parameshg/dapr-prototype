@@ -1,0 +1,11 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  namespace: dapr
+  name: throttler
+spec:
+  type: middleware.http.ratelimit
+  version: v1
+  metadata:
+  - name: maxRequestsPerSecond
+    value: 1

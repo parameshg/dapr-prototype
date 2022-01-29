@@ -8,6 +8,7 @@ using System;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Backend.Controllers
 {
@@ -56,7 +57,7 @@ namespace Backend.Controllers
 
             var number = new Random(DateTime.Now.Millisecond).Next(0, 100);
 
-            data.Items.Add(number);
+            data.Add(number);
 
             await Dapr.SaveStateAsync(DATABASE, "data", data);
 
@@ -91,7 +92,7 @@ namespace Backend.Controllers
 
             if (data != null)
             {
-                result = data.Items.Count;
+                result = data.Count;
             }
 
             return result;
@@ -106,7 +107,7 @@ namespace Backend.Controllers
 
             if (data != null)
             {
-                data.Items.Add(number);
+                data.Add(number);
 
                 await Dapr.SaveStateAsync(DATABASE, "data", data);
 

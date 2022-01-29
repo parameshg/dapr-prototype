@@ -18,6 +18,8 @@ spec:
         dapr.io/enabled: "true"
         dapr.io/app-id: "backend"
         dapr.io/app-port: "80"
+        dapr.io/config: "appconfig"
+        dapr.io/app-max-concurrency: "1"
     spec:
       containers:
         - name: api
