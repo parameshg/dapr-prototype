@@ -10,8 +10,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", 
 		components\cache.yml = components\cache.yml
 		components\configuration.yml = components\configuration.yml
 		Components\middleware.yml = Components\middleware.yml
+		components\oauth.yml = components\oauth.yml
 		components\secrets.yml = components\secrets.yml
 		components\throttler.yml = components\throttler.yml
+		components\tokenizer.yml = components\tokenizer.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{D86BCFDE-019C-44CA-B61F-9DDC9501026C}"
@@ -28,6 +30,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{A265
 		scripts\debug-backend.bat = scripts\debug-backend.bat
 		scripts\debug-frontend.bat = scripts\debug-frontend.bat
 		scripts\debug-infra.bat = scripts\debug-infra.bat
+		scripts\debug-security.bat = scripts\debug-security.bat
 		scripts\install.bat = scripts\install.bat
 		scripts\setup.bat = scripts\setup.bat
 		scripts\test.bat = scripts\test.bat
@@ -36,9 +39,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{A265
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api", "api", "{0C43DDB7-1C82-4171-BB63-45D5FA832249}"
 	ProjectSection(SolutionItems) = preProject
-		api\appconfig.yml = api\appconfig.yml
+		api\backend-config.yml = api\backend-config.yml
 		api\backend.yml = api\backend.yml
+		api\frontend-config.yml = api\frontend-config.yml
 		api\frontend.yml = api\frontend.yml
+		api\security-config.yml = api\security-config.yml
+		api\security.yml = api\security.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_", "_", "{28FC920E-9C80-4907-BA33-A6ABD47E646C}"
@@ -56,6 +62,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "debug", "debug", "{0F07D89C
 		components\debug\secrets.yml = components\debug\secrets.yml
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Security", "security\Security.csproj", "{14EEE4DC-5098-4A29-BA85-31AB4BA1FDB5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,6 +78,10 @@ Global
 		{57955965-38F9-431D-A67E-C4E24181111C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57955965-38F9-431D-A67E-C4E24181111C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57955965-38F9-431D-A67E-C4E24181111C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14EEE4DC-5098-4A29-BA85-31AB4BA1FDB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14EEE4DC-5098-4A29-BA85-31AB4BA1FDB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14EEE4DC-5098-4A29-BA85-31AB4BA1FDB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14EEE4DC-5098-4A29-BA85-31AB4BA1FDB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

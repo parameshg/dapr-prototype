@@ -1,11 +1,11 @@
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 
-namespace Frontend
+namespace Security
 {
     public class Startup
     {
@@ -18,18 +18,20 @@ namespace Frontend
 
         public void ConfigureServices(IServiceCollection services)
         {
-#if DEBUG
-            services.AddAuthentication("Bearer").AddIdentityServerAuthentication("Bearer", cfg =>
-            {
-                cfg.ApiName = "frontend";
-                cfg.ApiSecret = "frontendpassword";
-                cfg.Authority = "http://localhost:8888";
-                cfg.RequireHttpsMetadata = false;
-            });
-#endif
-            services.AddControllers().AddDapr();
+            services.AddControllers();
 
-            services.AddDaprClient();
+            services.AddSwaggerGen(cfg =>
+            {
+                cfg.SwaggerDoc("v1", new OpenApiInfo { Title = "OpenID Connect", Version = "v1" });
+            });
+
+            services.AddIdentityServer()
+                    .AddInMemoryClients(Config.Clients)
+                    .AddInMemoryApiResources(Config.ApiResources)
+                    .AddInMemoryIdentityResources(Config.IdentityResources)
+                    .AddInMemoryApiScopes(Config.Scopes)
+                    .AddTestUsers(Config.Users)
+                    .AddDeveloperSigningCredential();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -37,20 +39,20 @@ namespace Frontend
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
+                app.UseSwagger();
+
+                app.UseSwaggerUI(cfg => cfg.SwaggerEndpoint("/swagger/v1/swagger.json", "OIDC v1"));
             }
 
             app.UseRouting();
-#if DEBUG
-            app.UseAuthentication();
+
+            app.UseIdentityServer();
 
             app.UseAuthorization();
-#endif
-            app.UseCloudEvents();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapSubscribeHandler();
-
                 endpoints.MapControllers();
             });
         }

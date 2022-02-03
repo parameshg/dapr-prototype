@@ -1,0 +1,13 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  namespace: dapr
+  name: tokenizer
+spec:
+  type: middleware.http.bearer
+  version: v1
+  metadata:
+  - name: clientId
+    value: "curl"
+  - name: issuerURL
+    value: "http://security-dapr"

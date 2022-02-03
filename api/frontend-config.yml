@@ -1,0 +1,14 @@
+apiVersion: dapr.io/v1alpha1
+kind: Configuration
+metadata:
+  namespace: dapr
+  name: frontend
+spec:
+  httpPipeline:
+    handlers:
+    - name: tokenizer
+      type: middleware.http.bearer
+    - name: oauth
+      type: middleware.http.oauth2clientcredentials
+    - name: throttler
+      type: middleware.http.ratelimit

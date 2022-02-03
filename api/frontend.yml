@@ -18,7 +18,8 @@ spec:
         dapr.io/enabled: "true"
         dapr.io/app-id: "frontend"
         dapr.io/app-port: "80"
-        dapr.io/config: "appconfig"
+        dapr.io/config: "frontend"
+        dapr.io/log-level: "debug"
         dapr.io/app-max-concurrency: "1"
     spec:
       containers:
@@ -26,7 +27,7 @@ spec:
           image: parameshg/dapr-prototype-frontend-api:latest
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 6379
+            - containerPort: 80
           resources:
             limits:
               memory: "1Gi"

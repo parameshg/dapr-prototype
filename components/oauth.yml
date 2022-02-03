@@ -1,0 +1,19 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  namespace: dapr
+  name: oauth
+spec:
+  type: middleware.http.oauth2clientcredentials
+  version: v1
+  metadata:
+  - name: clientId
+    value: "curl"
+  - name: clientSecret
+    value: "password"
+  - name: scopes
+    value: "series.read"
+  - name: tokenURL
+    value: "http://security-dapr/connect/token"
+  - name: headerName
+    value: "authorization"

@@ -3,27 +3,27 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   namespace: dapr
-  name: backend
+  name: security
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: backend
+      app: security
   template:
     metadata:
       namespace: dapr
       labels:
-        app: backend
+        app: security
       annotations:
         dapr.io/enabled: "true"
-        dapr.io/app-id: "backend"
+        dapr.io/app-id: "security"
         dapr.io/app-port: "80"
-        dapr.io/config: "backend"
+        dapr.io/config: "security"
         dapr.io/log-level: "debug"
     spec:
       containers:
         - name: api
-          image: parameshg/dapr-prototype-backend-api:latest
+          image: parameshg/dapr-prototype-security-api:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80

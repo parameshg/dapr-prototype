@@ -1,4 +1,5 @@
 ﻿using Dapr.Client;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,9 @@ using System.Threading.Tasks;
 namespace Frontend.Controllers
 {
     [Route("")]
+#if DEBUG
+    [Authorize]
+#endif
     [ApiController]
     public class HomeController : ControllerBase
     {
@@ -35,6 +39,7 @@ namespace Frontend.Controllers
         }
 
         [HttpGet("")]
+        [AllowAnonymous]
         public async Task<bool> Index()
         {
             return await Dapr.CheckHealthAsync();

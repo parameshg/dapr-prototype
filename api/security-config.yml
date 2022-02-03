@@ -2,7 +2,7 @@ apiVersion: dapr.io/v1alpha1
 kind: Configuration
 metadata:
   namespace: dapr
-  name: appconfig
+  name: security
 spec:
   httpPipeline:
     handlers:
