@@ -1,3 +1,4 @@
-curl http://localhost:5000/
-curl http://localhost:4000/
-curl http://localhost:4000/series
+curl http://localhost:8888/
+curl http://localhost:8090/
+curl http://localhost:8080/
+curl http://localhost:8080/series

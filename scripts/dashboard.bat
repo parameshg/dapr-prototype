@@ -1,0 +1,1 @@
+dapr dashboard -k -n dapr-system -p 9999

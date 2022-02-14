@@ -10,6 +10,7 @@ kubectl apply -f ../components/cache.yml
 kubectl apply -f ../components/middleware.yml
 kubectl apply -f ../components/secrets.yml
 kubectl apply -f ../components/configuration.yml
+kubectl apply -f ../components/uppercase.yml
 kubectl apply -f ../components/throttler.yml
 kubectl apply -f ../components/oauth.yml
 kubectl apply -f ../components/tokenizer.yml

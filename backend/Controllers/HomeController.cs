@@ -37,9 +37,14 @@ namespace Backend.Controllers
         }
 
         [HttpGet("")]
-        public async Task<bool> Index()
+        public async Task<dynamic> Index()
         {
-            return await Dapr.CheckHealthAsync();
+            return new
+            {
+                name = "Backend",
+                timestamp = DateTime.Now.ToString(),
+                health = await Dapr.CheckHealthAsync(),
+            };
         }
 
         [HttpGet("/random")]

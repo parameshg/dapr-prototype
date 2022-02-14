@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace Security.Controllers
 {
@@ -7,9 +8,14 @@ namespace Security.Controllers
     public class HomeController : ControllerBase
     {
         [HttpGet("")]
-        public string Index()
+        public dynamic Index()
         {
-            return "Authentication and Authorization API";
+            return new
+            {
+                health = true,
+                name = "Security",
+                timestamp = DateTime.Now.ToString()
+            };
         }
     }
 }

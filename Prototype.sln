@@ -11,9 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", 
 		components\configuration.yml = components\configuration.yml
 		Components\middleware.yml = Components\middleware.yml
 		components\oauth.yml = components\oauth.yml
+		components\ratelimit.yml = components\ratelimit.yml
 		components\secrets.yml = components\secrets.yml
-		components\throttler.yml = components\throttler.yml
 		components\tokenizer.yml = components\tokenizer.yml
+		components\uppercase.yml = components\uppercase.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{D86BCFDE-019C-44CA-B61F-9DDC9501026C}"
@@ -27,6 +28,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{A265F374-B5E4-438A-BD03-1618B392D2D9}"
 	ProjectSection(SolutionItems) = preProject
 		scripts\build.bat = scripts\build.bat
+		scripts\dashboard.bat = scripts\dashboard.bat
 		scripts\debug-backend.bat = scripts\debug-backend.bat
 		scripts\debug-frontend.bat = scripts\debug-frontend.bat
 		scripts\debug-infra.bat = scripts\debug-infra.bat

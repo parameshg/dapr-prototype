@@ -1,6 +1,7 @@
 ﻿using Dapr.Client;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -40,9 +41,14 @@ namespace Frontend.Controllers
 
         [HttpGet("")]
         [AllowAnonymous]
-        public async Task<bool> Index()
+        public async Task<dynamic> Index()
         {
-            return await Dapr.CheckHealthAsync();
+            return new
+            {
+                name = "Frontend",
+                timestamp = DateTime.Now.ToString(),
+                health = await Dapr.CheckHealthAsync(),
+            };
         }
 
         [HttpGet("/config/{key}")]
