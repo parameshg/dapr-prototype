@@ -1,0 +1,1 @@
+kubectl port-forward service/frontend-dapr 8080:80 -n dapr

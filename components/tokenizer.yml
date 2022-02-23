@@ -8,6 +8,6 @@ spec:
   version: v1
   metadata:
   - name: clientId
-    value: "curl"
+    value: "<REPLACE_YOUR_CLIENT_ID_HERE>"
   - name: issuerURL
-    value: "http://security-dapr"
+    value: "https://prototypes.au.auth0.com/"

@@ -11,8 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", 
 		components\configuration.yml = components\configuration.yml
 		Components\middleware.yml = Components\middleware.yml
 		components\oauth.yml = components\oauth.yml
-		components\ratelimit.yml = components\ratelimit.yml
 		components\secrets.yml = components\secrets.yml
+		components\throttler.yml = components\throttler.yml
 		components\tokenizer.yml = components\tokenizer.yml
 		components\uppercase.yml = components\uppercase.yml
 	EndProjectSection
@@ -34,6 +34,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{A265
 		scripts\debug-infra.bat = scripts\debug-infra.bat
 		scripts\debug-security.bat = scripts\debug-security.bat
 		scripts\install.bat = scripts\install.bat
+		scripts\port-forward-backend.bat = scripts\port-forward-backend.bat
+		scripts\port-forward-frontend.bat = scripts\port-forward-frontend.bat
+		scripts\port-forward-security.bat = scripts\port-forward-security.bat
 		scripts\setup.bat = scripts\setup.bat
 		scripts\test.bat = scripts\test.bat
 		scripts\uninstall.bat = scripts\uninstall.bat
@@ -45,6 +48,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api", "api", "{0C43DDB7-1C8
 		api\backend.yml = api\backend.yml
 		api\frontend-config.yml = api\frontend-config.yml
 		api\frontend.yml = api\frontend.yml
+		api\nginx.yml = api\nginx.yml
 		api\security-config.yml = api\security-config.yml
 		api\security.yml = api\security.yml
 	EndProjectSection

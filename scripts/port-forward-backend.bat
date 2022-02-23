@@ -1,0 +1,1 @@
+kubectl port-forward service/backend-dapr 8090:80 -n dapr

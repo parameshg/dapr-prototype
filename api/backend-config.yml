@@ -8,3 +8,5 @@ spec:
     handlers:
     - name: throttler
       type: middleware.http.ratelimit
+    - name: tokenizer
+      type: middleware.http.bearer

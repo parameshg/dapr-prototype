@@ -6,9 +6,7 @@ metadata:
 spec:
   httpPipeline:
     handlers:
-    - name: tokenizer
-      type: middleware.http.bearer
-    - name: oauth
-      type: middleware.http.oauth2clientcredentials
     - name: throttler
       type: middleware.http.ratelimit
+    - name: oauth
+      type: middleware.http.oauth2clientcredentials

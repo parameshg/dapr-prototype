@@ -1,0 +1,1 @@
+kubectl port-forward service/security-dapr 8888:80 -n dapr

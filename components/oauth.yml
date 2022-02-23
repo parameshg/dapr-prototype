@@ -8,12 +8,14 @@ spec:
   version: v1
   metadata:
   - name: clientId
-    value: "curl"
+    value: "<REPLACE_YOUR_CLIENT_ID_HERE>"
   - name: clientSecret
-    value: "password"
+    value: "<REPLACE_YOUR_CLIENT_SECRET_HERE>" # secrets are rotated after each demo
   - name: scopes
-    value: "series.read"
+    value: "default"
   - name: tokenURL
-    value: "http://security-dapr/connect/token"
+    value: "https://prototypes.au.auth0.com/oauth/token"
   - name: headerName
     value: "authorization"
+  - name: authStyle
+    value: "2"

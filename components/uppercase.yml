@@ -6,3 +6,6 @@ metadata:
 spec:
   type: middleware.http.uppercase
   version: v1
+  metadata:
+  - name: test
+    value: "test"

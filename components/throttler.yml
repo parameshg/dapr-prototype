@@ -8,4 +8,4 @@ spec:
   version: v1
   metadata:
   - name: maxRequestsPerSecond
-    value: 1
+    value: 10
