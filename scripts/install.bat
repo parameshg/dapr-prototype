@@ -4,6 +4,7 @@ kubectl config use-context docker-desktop
 kubectl apply -f ../infrastructure/namespace.yml
 kubectl apply -f ../infrastructure/redis.yml
 kubectl apply -f ../infrastructure/rabbitmq.yml
+kubectl apply -f ../infrastructure/zipkin.yml
 timeout 30
 
 kubectl apply -f ../components/cache.yml
@@ -16,9 +17,9 @@ kubectl apply -f ../components/oauth.yml
 kubectl apply -f ../components/tokenizer.yml
 timeout 30
 
-kubectl apply -f ../api/security-config.yml
-kubectl apply -f ../api/backend-config.yml
-kubectl apply -f ../api/frontend-config.yml
+kubectl apply -f ../configuration/security.yml
+kubectl apply -f ../configuration/backend.yml
+kubectl apply -f ../configuration/frontend.yml
 kubectl apply -f ../api/security.yml
 kubectl apply -f ../api/backend.yml
 kubectl apply -f ../api/frontend.yml

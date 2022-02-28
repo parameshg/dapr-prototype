@@ -23,6 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastru
 		infrastructure\namespace.yml = infrastructure\namespace.yml
 		infrastructure\rabbitmq.yml = infrastructure\rabbitmq.yml
 		infrastructure\redis.yml = infrastructure\redis.yml
+		infrastructure\zipkin.yml = infrastructure\zipkin.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{A265F374-B5E4-438A-BD03-1618B392D2D9}"
@@ -46,9 +47,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api", "api", "{0C43DDB7-1C8
 	ProjectSection(SolutionItems) = preProject
 		api\backend-config.yml = api\backend-config.yml
 		api\backend.yml = api\backend.yml
+		api\debug.yml = api\debug.yml
 		api\frontend-config.yml = api\frontend-config.yml
 		api\frontend.yml = api\frontend.yml
-		api\nginx.yml = api\nginx.yml
 		api\security-config.yml = api\security-config.yml
 		api\security.yml = api\security.yml
 	EndProjectSection

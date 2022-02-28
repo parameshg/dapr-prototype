@@ -10,3 +10,7 @@ spec:
       type: middleware.http.ratelimit
     - name: tokenizer
       type: middleware.http.bearer
+  tracing:
+    samplingRate: "1"
+    zipkin:
+      endpointAddress: "http://zipkin.dapr.svc.cluster.local:9411/api/v2/spans"

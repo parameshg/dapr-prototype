@@ -1,0 +1,1 @@
+kubectl port-forward service/zipkin 9411:9411 -n dapr
