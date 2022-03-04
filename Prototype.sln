@@ -38,6 +38,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{A265
 		scripts\port-forward-backend.bat = scripts\port-forward-backend.bat
 		scripts\port-forward-frontend.bat = scripts\port-forward-frontend.bat
 		scripts\port-forward-security.bat = scripts\port-forward-security.bat
+		scripts\port-forward-tracing.bat = scripts\port-forward-tracing.bat
 		scripts\setup.bat = scripts\setup.bat
 		scripts\test.bat = scripts\test.bat
 		scripts\uninstall.bat = scripts\uninstall.bat
@@ -45,12 +46,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{A265
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api", "api", "{0C43DDB7-1C82-4171-BB63-45D5FA832249}"
 	ProjectSection(SolutionItems) = preProject
-		api\backend-config.yml = api\backend-config.yml
 		api\backend.yml = api\backend.yml
 		api\debug.yml = api\debug.yml
-		api\frontend-config.yml = api\frontend-config.yml
 		api\frontend.yml = api\frontend.yml
-		api\security-config.yml = api\security-config.yml
 		api\security.yml = api\security.yml
 	EndProjectSection
 EndProject
@@ -70,6 +68,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "debug", "debug", "{0F07D89C
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Security", "security\Security.csproj", "{14EEE4DC-5098-4A29-BA85-31AB4BA1FDB5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "configuration", "configuration", "{9FEE5A8E-28C0-4121-85F6-D529A56F7B46}"
+	ProjectSection(SolutionItems) = preProject
+		configuration\backend.yml = configuration\backend.yml
+		configuration\frontend.yml = configuration\frontend.yml
+		configuration\security.yml = configuration\security.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
